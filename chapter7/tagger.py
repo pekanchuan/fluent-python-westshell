@@ -1,4 +1,7 @@
 
+from functools import partial
+
+
 def tag(name, *content, class_=None, **attrs):
     """generate one or more HTML tags"""
     if class_ is not None:
@@ -11,3 +14,8 @@ def tag(name, *content, class_=None, **attrs):
         return '\n'.join(elements)
     else:
         return f'<{name}{attr_str} />'
+
+
+picture = partial(tag, 'img', class_='pic-frame')
+
+picture(src='wumpus.jpeg')
