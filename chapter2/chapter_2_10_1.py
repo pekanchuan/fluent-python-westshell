@@ -4,13 +4,13 @@ from random import random
 floats = array('d', (random() for i in range(10**7)))
 print(floats[-1])
 
-fp = open('./chapter_2/floats.bin', 'wb')
+fp = open('./chapter2/floats.bin', 'wb')
 floats.tofile(fp)
 fp.close()
 
 
 floats2 = array('d')
-fp = open('./chapter_2/floats.bin', 'rb')
+fp = open('./chapter2/floats.bin', 'rb')
 floats2.fromfile(fp, 10**7)
 fp.close()
 print(floats2[-1])
