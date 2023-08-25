@@ -19,3 +19,13 @@ class clock:
             return _result
 
         return clocked
+
+
+if __name__ == '__main__':
+    @clock()
+    def snooze(seconds):
+        time.sleep(seconds)
+
+
+    for i in range(4):
+        snooze(.123)
