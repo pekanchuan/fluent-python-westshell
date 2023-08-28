@@ -60,6 +60,13 @@ def large_order_promo(order: Order):
     return Decimal(0)
 
 
+promos = [fidelity_promo, bulk_item_promo, large_order_promo]
+
+
+def best_promo(order: Order):
+    return max(promo(order) for promo in promos)
+
+
 if __name__ == '__main__':
     joe = Customer('John Doe', 0)
     ann = Customer('Ann Smith', 1100)
@@ -70,3 +77,6 @@ if __name__ == '__main__':
         LineItem('watermelon', 5, Decimal(5)),
     ]
     print(Order(ann, cart, fidelity_promo))
+
+
+    print(globals())
