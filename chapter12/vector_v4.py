@@ -1,9 +1,8 @@
-import operator
-from array import array
-import reprlib
-import math
 import functools
+import math
 import operator
+import reprlib
+from array import array
 
 
 class Vector:
