@@ -195,6 +195,7 @@ import math
 import operator
 import reprlib
 from array import array
+from collections import abc
 
 
 class Vector:
@@ -253,6 +254,19 @@ class Vector:
 
     def __rmul__(self, scalar):
         return self * scalar
+
+    def __matmul__(self, other):
+        if (isinstance(other, abc.Sized) and
+                isinstance(other, abc.Iterable)):
+            if len(self) == len(other):
+                return sum(a * b for a, b in zip(self, other))
+            else:
+                raise ValueError('@ requires vectors of equal length.')
+        else:
+            return NotImplemented
+
+    def __rmatmul__(self, other):
+        return self @ other
 
     def __bool__(self):
         return bool(abs(self))
