@@ -244,6 +244,16 @@ class Vector:
     def __radd__(self, other):
         return self + other
 
+    def __mul__(self, scalar):
+        try:
+            factor = float(scalar)
+        except TypeError:
+            return NotImplemented
+        return Vector(n * factor for n in self)
+
+    def __rmul__(self, scalar):
+        return self * scalar
+
     def __bool__(self):
         return bool(abs(self))
 
