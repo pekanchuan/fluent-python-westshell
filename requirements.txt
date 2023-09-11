@@ -2,3 +2,4 @@ pyuca~=1.2
 pytest~=7.4.0
 numpy~=1.25.2
 geolib~=1.0.7
+httpx~=0.24.1
