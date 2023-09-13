@@ -2,7 +2,8 @@ from collections import abc
 
 
 class FrozenJSON:
-    """a readable interface
+    """A read-only façade for navigating a JSON-like object
+       using attribute notation
     """
 
     def __init__(self, mapping):
